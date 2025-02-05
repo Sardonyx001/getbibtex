@@ -50,8 +50,8 @@ export const authOptions: NextAuthOptions = {
       credentials: _credentials,
     }) => {
       if (
-        user.name === "the_karlosos" &&
-        user.email === "karlososhd@gmail.com"
+        user.name === "sardonyx001" &&
+        user.email === "lassouedjamel@hotmail.fr"
       ) {
         return true;
       }
