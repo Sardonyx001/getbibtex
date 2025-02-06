@@ -1,8 +1,7 @@
-version: '3.7'
 services:
   # db definition
   getbibtex_mongodb:
-    image: mongo:latest
+    image: mongo:4.4.20
     container_name: getbibtex_mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
