@@ -61,18 +61,17 @@ function domainFromUrl(url: string): string {
 
 function bibtexFromEntryData(entryData: EntryData): string {
   // TODO: check if there are no invalid characters for bibtex
-  const currentDate = getCurrentDateString();
+  const currentDate = getCurrentDateString("yyyy-MM-dd");
   const title = encodeCharactersInBibTex(
-    `${entryData.title ? entryData.title + ' --- ' : ''}${entryData.website}`,
+    `${entryData.title ? entryData.title + " --- " : ""}${entryData.website}`,
   );
-  const bibtex = `@misc{${createCiteKey(entryData)},
+  const bibtex = `@webpage{${createCiteKey(entryData)},
 \tauthor = {${entryData.author}},
 \ttitle = {${title}},
-\thowpublished = {\\url{${entryData.url}}},
-\tyear = {},
-\tnote = {[Accessed ${currentDate}]},
+\torganization = {},
+\turl = {\\url{${entryData.url}}},
+\trefdate = {${currentDate}},
 }`;
 
   return bibtex;
 }
-
